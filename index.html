@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Ejercicio con WebWorkers</title>
+
+  <script>
+        // Objeto Worker
+        var worker = new Worker('worker.js'); // Ruta del archivo JS
+
+        mensaje = parseInt(document.getElementById("formulario").input.value)
+
+        worker.postMessage(mensaje);
+
+        worker.addEventListener('message', function(e) {
+            // Salta la alerta
+            alert('Esta es la respuesta del Worker: ' + e.data);
+            var primelist = e.data;
+        }, false);
+
+        document.getElementById('result').innerHTML = primelist;
+
+  </script>
+
+
+
+ </head>
+ <body>
+  <form id="formulario" action="" method="POST">
+  Numero: <input type="text" name="input">
+  </form>
+  <button onclick="buscarPrimos()">Buscar primos</button>
+  <p>Los numeros primos hasta el numero dado son: <span id="result"></span></p>
+
+
+ </body>
+</html>
