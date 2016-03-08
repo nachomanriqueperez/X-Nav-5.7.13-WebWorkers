@@ -1,11 +1,3 @@
-// Al recibir un mensaje se ejecuta
-//self.addEventListener('message', function(e) {
-//    var a = e.data[0],
-//        b = e.data[1],
-//        r = a + b;  // Sumamos ambos datos
-//    self.postMessage( r );  // Contestamos con la suma
-//}, false);
-
 self.addEventListener('message',function (e) {
 
   var n = 1;
