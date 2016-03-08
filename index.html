@@ -7,6 +7,7 @@
 
         function buscarPrimos() {
                 var worker = new Worker('worker.js');
+                var primelist = "";
 
                 mensaje = parseInt(document.getElementById("formulario").input.value);
 
@@ -15,7 +16,7 @@
                 worker.addEventListener('message', function(e) {
                     // Salta la alerta
                     alert('Esta es la respuesta del Worker: ' + e.data);
-                    var primelist = e.data;
+                    primelist = e.data;
                 }, false);
 
                 document.getElementById('result').innerHTML = primelist;
