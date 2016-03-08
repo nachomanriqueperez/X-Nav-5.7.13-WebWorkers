@@ -4,20 +4,22 @@
   <title>Ejercicio con WebWorkers</title>
 
   <script>
-        // Objeto Worker
-        var worker = new Worker('worker.js'); // Ruta del archivo JS
 
-        mensaje = parseInt(document.getElementById("formulario").input.value);
+        function buscarPrimos() {
+                var worker = new Worker('worker.js');
 
-        worker.postMessage(mensaje);
+                mensaje = parseInt(document.getElementById("formulario").input.value);
 
-        worker.addEventListener('message', function(e) {
-            // Salta la alerta
-            alert('Esta es la respuesta del Worker: ' + e.data);
-            var primelist = e.data;
-        }, false);
+                worker.postMessage(mensaje);
 
-        document.getElementById('result').innerHTML = primelist;
+                worker.addEventListener('message', function(e) {
+                    // Salta la alerta
+                    alert('Esta es la respuesta del Worker: ' + e.data);
+                    var primelist = e.data;
+                }, false);
+
+                document.getElementById('result').innerHTML = primelist;
+        }
 
   </script>
 
