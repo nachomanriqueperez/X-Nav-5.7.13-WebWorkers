@@ -7,7 +7,7 @@
 //}, false);
 
 self.addEventListener('message',function (e) {
-  self.postMessage("HAsta aqui");
+
   var n = 1;
   primelist = "";
   search: while (n<e.data) {
