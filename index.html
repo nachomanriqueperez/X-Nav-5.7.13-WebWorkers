@@ -15,7 +15,6 @@
 
                 worker.addEventListener('message', function(e) {
                     // Salta la alerta
-                    alert('Esta es la respuesta del Worker: ' + e.data);
                     primelist = e.data;
                     console.log(primelist);
                 }, false);
