@@ -7,7 +7,7 @@
         // Objeto Worker
         var worker = new Worker('worker.js'); // Ruta del archivo JS
 
-        mensaje = parseInt(document.getElementById("formulario").input.value)
+        mensaje = parseInt(document.getElementById("formulario").input.value);
 
         worker.postMessage(mensaje);
 
